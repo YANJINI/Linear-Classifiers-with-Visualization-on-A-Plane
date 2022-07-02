@@ -31,7 +31,9 @@ When each of those decomposed one-dimension feature distributions, $P(x_i | y)$ 
 <br />
 
 ### Logistic Regression Classifier
-When variances $`x_{i}`$ given lable are the same, $`P(y=1 | X)`$ with GNB becomes $`\frac{1}{1 + \e{w^{T}*x + b}}`$
+When variances $x_{i}$ given lable are the same, 
+$P(y=1 | X)$ with GNB becomes 
+$\frac{1}{1 + \e{w^{T}*x + b}}$
 
 ## Setup
 
