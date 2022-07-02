@@ -31,7 +31,7 @@ When each of those decomposed one-dimension feature distributions, $P(x_i | y)$ 
 <br />
 
 ### Logistic Regression Classifier
-Logistic regression is the discriminative counterpart to linear Gaussian Naive Bayes, which means it directly estimates w and b in the equation, $P(y=1 | x)={1\over{1+ w^{T}*x + b}}$. Linear Gaussian Naive Bayes also estimates w and b but with Bayesian form, by decomposing $P(X | y)$ into each feature distribution, $P(x_{i} | y)$ and assumming independent Gaussian distribution for each feature distribution. Surprisingly when GNB is linear, the final form of these two ML algorithms are the same as $P(y=1 | x)={1\over{1+ w^{T}*x + b}}$
+Logistic regression is the discriminative counterpart to linear Gaussian Naive Bayes, which means it directly estimates w and b in the equation, $P(y=1 | x)={1\over{1+ w^{T}*x + b}}$. Linear Gaussian Naive Bayes also estimates w and b but with Bayesian form, by decomposing $P(X | y)$ into each feature distribution, $P(x_{i} | y)$ and assumming independent Gaussian distribution for each feature distribution. Surprisingly when GNB is linear, the final form of these two ML algorithms are the same as $P(y=1 | x)={1\over{1+ w^{T}*x + b}}$ (for the proof, refer to [this](https://www.cs.cmu.edu/~tom/mlbook/NBayesLogReg.pdf)
 
 When it comes to logistic regression, it doesn't have to assume any form of feature distribution given label so it is more flexible than linear Gaussian Naive Bayes but requires more data. And also since there is no closed form of the derivative equation of w, minimum-finding-algorithms such as Gradient Descent and Newton's method are used to find the minimum of the logistic regression loss function. 
 
