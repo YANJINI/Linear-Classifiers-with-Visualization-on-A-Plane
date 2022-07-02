@@ -31,9 +31,10 @@ When each of those decomposed one-dimension feature distributions, $P(x_i | y)$ 
 <br />
 
 ### Logistic Regression Classifier
-When variances $x_{i}$ given lable are the same, 
-$P(y=1 | X)$ with GNB becomes 
-$\frac{1}{1 + \e{w^{T}*x + b}}$
+Logistic regression is the discriminative counterpart to linear Gaussian Naive Bayes, which means it directly estimates w and b in this equation $P(y=1 | x)={1\over{1+ w^{T}*x + b}}$ Linear Gaussian Naive Bayes also estimates w and b but with Bayesian form, by decomposing $P(X | y)$ into each feature distribution, $P(x_{i} | y)$ and assumming independent Gaussian distribution for each feature distribution. Surprisingly when GNB is linear, the final form of these two ML algorithms are the same as $P(y=1 | x)={1\over{1+ w^{T}*x + b}}$
+
+When it comes to logistic regression, it doesn't have to assume any form of feature distribution given label so it is more flexible than linear Gaussian Naive Bayes but requires more data. 
+
 
 ## Setup
 
