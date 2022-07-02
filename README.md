@@ -2,7 +2,7 @@
 Visualization of linear classifiers such as single Perceptron, linear GNB, logistic regression on a plane with matplotlib
 
 ## Bacic Idea
-From an inspiration by [Perceptron demo](https://youtu.be/wl7gVvI-HuY?t=1331) on lecture 4, [Naive Bayes demo](https://youtu.be/rqB0XWoMreU?t=2498) on lecture 10, and [logistic regression demo](https://youtu.be/GnkDzIOxfzI?t=2703) on lecture 11 of Kilian Weinberger's [Machine Learning for Intelligent Systems course](https://www.cs.cornell.edu/courses/cs4780/2018fa/) at Cornell University, I have built a conceptually same interactive single Perceptron and, linear and non-linear Gaussian naive Bayes demo in Python with matplotlib event handling. <br />
+From an inspiration by [Perceptron demo](https://youtu.be/wl7gVvI-HuY?t=1331) on lecture 4, [Naive Bayes demo](https://youtu.be/rqB0XWoMreU?t=2498) on lecture 10, and [logistic regression demo](https://youtu.be/GnkDzIOxfzI?t=2703) on lecture 11 of Kilian Weinberger's [Machine Learning for Intelligent Systems course](https://www.cs.cornell.edu/courses/cs4780/2018fa/) at Cornell University, I have built conceptually same interactive single Perceptron and, linear and non-linear Gaussian naive Bayes, and logistic regression demos in Python with matplotlib event handling. <br />
 
 
 ## How it works
