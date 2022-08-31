@@ -44,13 +44,6 @@ git clone to have this repository on your local machine as follows.
 git clone git@github.com:YANJINI/Linear-Classifiers-with-Visualization-on-A-Plane.git
 ```
 
-### path control
-To import modules written in this repository on your local macine, you need control path to this clone, which could be done as below. (Mac OS)
-```ruby
-import sys
-sys.path.extend(['/Users/jinijani/PycharmProjects/Practice/git_project/Single-Perceptron-and-Gaussian-Naive-Bayes-Classifier-with-Visualization-on-A-Plane'])
-```
-
 ### import 
 Import these two classifiers in another py project as below.
 ```ruby
