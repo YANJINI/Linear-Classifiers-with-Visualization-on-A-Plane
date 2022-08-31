@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
+plt.style.use('ggplot')
 
-class twoD_coordinates_Perceptron:
+class twoD_Perceptron:
     def __init__(self, learning_rate=1, n_iters=30):
         self.lr = learning_rate
         self.n_iters = n_iters
@@ -62,6 +63,7 @@ class twoD_coordinates_Perceptron:
                     self.ax.set_title('Converged!')
         else:
             print('You pressed a wrong button')
+
     def _Perceptron(self):
         self.m = 0
         if self.n_iter < self.n_iters:
@@ -77,7 +79,7 @@ class twoD_coordinates_Perceptron:
             self._background_figure()
             self._redraw_plots()
             plt.plot(self.x, self.y)
-            plt.fill_between(self.x, -10, self.y, alpha=.25)
+            plt.fill_between(self.x, -10, self.y, alpha=.25, color='b')
             plt.fill_between(self.x, self.y, 10, alpha=.25, color='r')
         else:
             self.ax.set_title('Screwed. It is probably not linearly seperable.')

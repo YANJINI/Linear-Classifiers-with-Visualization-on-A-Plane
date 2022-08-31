@@ -1,8 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats
+plt.style.use('ggplot')
 
-class twoD_coordinates_lGNB:
+class twoD_lGNB:
     def __init__(self):
         self.count_enter = 0
         self.which_label = 1
@@ -79,13 +80,8 @@ class twoD_coordinates_lGNB:
         self._redraw_plots()
         self._show_two_Gaussians_dist()
         plt.plot(x, y)
-        plt.fill_between(x, -10, y, alpha=.25)
+        plt.fill_between(x, -10, y, alpha=.25, color='b')
         plt.fill_between(x, y, 10, alpha=.25, color='r')
-
-        print(f'mean of coordinates from class 1: {self.mean_list[0]}')
-        print(f'mean of coordinates from class 2: {self.mean_list[1]}')
-        print(f'variance of coordinates: {[self.cov[0][0], self.cov[1][1]]} (no differ from class 1 to class 2)')
-        print(f'P(Y = class 1): {self.y1_proba}, P(Y = class 2): {self.y2_proba}')
 
     def _background_figure(self):
         if self.count_enter == 0:
