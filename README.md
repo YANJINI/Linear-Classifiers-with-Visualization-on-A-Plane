@@ -51,11 +51,12 @@ sys.path.extend(['/path_to_this_repository/Single-Perceptron-and-Gaussian-Naive-
 ```
 
 ### import 
-Import these two classifiers in another py project as below.
+Import these classifiers to another py project as below.
 ```ruby
 from Perceptron import twoD_Perceptron
 from linear_GNB import twoD_lGNB
-from logistic_r import twoD_logistic_r
+from logistic_r import twoD_logisticR
+from softmargin_SVM import twoD_softmarginSVM
 ```
 
 ### Others
