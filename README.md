@@ -45,18 +45,19 @@ git clone git@github.com:YANJINI/Linear-Classifiers-with-Visualization-on-A-Plan
 ```
 
 ### path control
-To import modules written in this repository on your local macine, you need control path to this clone, which could be done as below. (Mac OS)
+To import the classifier modules as done on examples.py, you have to control path to these modules as below (Mac OS)
 ```ruby
 import sys
-sys.path.extend(['/Users/jinijani/PycharmProjects/Practice/git_project/Single-Perceptron-and-Gaussian-Naive-Bayes-Classifier-with-Visualization-on-A-Plane'])
+sys.path.extend(['/path_to_this_repository/Single-Perceptron-and-Gaussian-Naive-Bayes-Classifier-with-Visualization-on-A-Plane'])
 ```
 
 ### import 
-Import these two classifiers in another py project as below.
+Import these classifiers to another py project as below.
 ```ruby
-from Perceptron import twoD_coordinates_Perceptron
-from linear_GNB import twoD_coordinates_lGNB
-from logistic_r import twoD_coordinates_logistic_r
+from Perceptron import twoD_Perceptron
+from linear_GNB import twoD_lGNB
+from logistic_r import twoD_logisticR
+from softmargin_SVM import twoD_softmarginSVM
 ```
 
 ### Others
