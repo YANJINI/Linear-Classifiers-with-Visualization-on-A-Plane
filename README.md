@@ -46,6 +46,7 @@ git clone git@github.com:YANJINI/Linear-Classifiers-with-Visualization-on-A-Plan
 
 ### path control
 To import the classifier modules as done on examples.py, you have to control path to these modules as below (Mac OS)
+```ruby
 import sys
 sys.path.extend(['/path_to_this_repository/Single-Perceptron-and-Gaussian-Naive-Bayes-Classifier-with-Visualization-on-A-Plane'])
 ```
