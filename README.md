@@ -53,7 +53,13 @@ Pressing another enter shows the interations of gradient descent and newton's me
 <br />
 
 ### Soft-Margin Linear SVM Classifier
-![soft-margin_linear_SVM](/images/soft-margin_linear_SVM.gif)<br />
+Black line is the hyperplane, $w^Tx + b = 0$ and white lines are support vector lines, $w^Tx + b = |1|$. <br />
+
+![soft-margin_linear_SVM](/images/soft-margin_linear_SVM.gif)
+
+8 different plots with different C values <br />
+
+![SVM_with_differentC](/images/SVM_with_differentC.png)<br />
 
 
 
