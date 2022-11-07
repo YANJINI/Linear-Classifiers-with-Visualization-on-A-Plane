@@ -1,8 +1,8 @@
 # Linear-Classifiers-with-Visualization-on-A-Plane
-Visualization of linear classifiers such as single Perceptron, linear GNB, logistic regression, soft-margin SVM on a plane with matplotlib
+Visualization of linear classifiers such as single Perceptron, linear GNB, logistic regression, soft-margin linear SVM on a plane with matplotlib
 
 ## Bacic Idea
-From an inspiration by [Perceptron demo](https://youtu.be/wl7gVvI-HuY?t=1331) on lecture 4, [Naive Bayes demo](https://youtu.be/rqB0XWoMreU?t=2498) on lecture 10, [logistic regression demo](https://youtu.be/GnkDzIOxfzI?t=2703) on lecture 11, and [soft-margin SVM](https://youtu.be/xpHQ6UhMlx4?t=2843) on lecture 14 of Kilian Weinberger's [Machine Learning for Intelligent Systems course](https://www.cs.cornell.edu/courses/cs4780/2018fa/) at Cornell University, I have built conceptually same interactive single Perceptron and, linear and non-linear Gaussian naive Bayes, logistic regression, and soft-margin SVM demos in Python with matplotlib event handling. <br />
+From an inspiration by [Perceptron demo](https://youtu.be/wl7gVvI-HuY?t=1331) on lecture 4, [Naive Bayes demo](https://youtu.be/rqB0XWoMreU?t=2498) on lecture 10, [logistic regression demo](https://youtu.be/GnkDzIOxfzI?t=2703) on lecture 11, and [soft-margin linear SVM](https://youtu.be/xpHQ6UhMlx4?t=2843) on lecture 14 of Kilian Weinberger's [Machine Learning for Intelligent Systems course](https://www.cs.cornell.edu/courses/cs4780/2018fa/) at Cornell University, I have built conceptually same interactive single Perceptron and, linear and non-linear Gaussian naive Bayes, logistic regression, and soft-margin linear SVM demos in Python with matplotlib event handling. <br />
 
 
 ## How it works
@@ -48,7 +48,13 @@ Pressing another enter shows the interations of gradient descent and newton's me
 
 ![logisticR_gradient](/images/logisticR_gradient.gif)
 
-![logisticR_newton](/images/logisticR_newton.gif)
+![logisticR_newton](/images/logisticR_newton.gif)<br />
+<br />
+<br />
+
+### Soft-Margin Linear SVM Classifier
+![soft_margin_linear_SVM](/images/soft_margin_linear_SVM.gif)<br />
+
 
 
 ## Setup
