@@ -53,7 +53,7 @@ Pressing another enter shows the interations of gradient descent and newton's me
 <br />
 
 ### Soft-Margin Linear SVM Classifier
-![soft_margin_linear_SVM](/images/soft_margin_linear_SVM.gif)<br />
+![soft-margin_linear_SVM](/images/soft-margin_linear_SVM.gif)<br />
 
 
 
