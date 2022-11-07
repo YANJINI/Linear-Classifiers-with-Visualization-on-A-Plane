@@ -1,5 +1,5 @@
 import sys
-sys.path.extend(['/Users/jinijani/PycharmProjects/git_project/ML/Linear-Classifiers-with-Visualization-on-A-Plane'])
+sys.path.extend(['/Users/jin/PycharmProjects/git_project/ML/Linear-Classifiers-with-Visualization-on-A-Plane'])
 
 from Perceptron import twoD_Perceptron
 from linear_GNB import twoD_lGNB

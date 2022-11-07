@@ -16,7 +16,7 @@ class twoD_logisticR:
         self.labeled_coordinates = {}
         self.labeled_coordinates[-1] = []
         self.labeled_coordinates[1] = []
-        plt.show()
+        plt.show(block=True)
 
     def give_labeled_coordinates(self):
         return self.labeled_coordinates
@@ -106,15 +106,16 @@ class twoD_logisticR:
             gradient = self._calculate_gradient(self.weights)
             loss = self._calculate_loss(self.weights)
 
-            print(f'Gradient {n_iter}: loss {loss} norm(gradient change) {np.linalg.norm(gradient-gradient_old)}')
+            gradient_info = f'Gradient {n_iter}: loss {loss} norm(gradient change) {np.linalg.norm(gradient-gradient_old)}'
+            print(gradient_info)
             y = [(-self.weights[0] / self.weights[1]) * x_i - self.weights[2] / self.weights[1] for x_i in x]
 
             plt.cla()
-            self._background_figure()
+            self._background_figure(iter_info=gradient_info)
             self._redraw_plots()
             plt.plot(x, y)
             self._fill_btw(x, y)
-            plt.pause(0.01)
+            plt.pause(0.3)
 
             if np.linalg.norm(gradient - gradient_old) < 1e-3:
                 break
@@ -128,15 +129,16 @@ class twoD_logisticR:
             gradient = self._calculate_gradient(self.weights)
 
             loss = self._calculate_loss(self.weights)
-            print(f"Newton's method: {n_iter}: loss {loss} norm(gradient change) {np.linalg.norm(gradient-gradient_old)}")
+            newton_info = f"Newton's method: {n_iter}: loss {loss} norm(gradient change) {np.linalg.norm(gradient-gradient_old)}"
+            print(newton_info)
             y = [(-self.weights[0] / self.weights[1]) * x_i - self.weights[2] / self.weights[1] for x_i in x]
 
             plt.cla()
-            self._background_figure()
+            self._background_figure(iter_info=newton_info)
             self._redraw_plots()
             plt.plot(x, y)
             self._fill_btw(x, y)
-            plt.pause(0.01)
+            plt.pause(0.3)
 
             if np.linalg.norm(gradient - gradient_old) < 1e-6:
                 break
@@ -196,7 +198,7 @@ class twoD_logisticR:
         plt.plot(x, y)
         self._fill_btw(x, y)
 
-    def _background_figure(self):
+    def _background_figure(self, iter_info=None):
         if self.count_enter == 0:
             self.figure, self.ax = plt.subplots()
             self.ax.set_aspect(1)
@@ -224,7 +226,7 @@ class twoD_logisticR:
             self.ax.set_aspect('equal')
             self.ax.set_xlabel('feature 1')
             self.ax.set_ylabel('feature 2')
-            self.ax.set_title('Logistic Regression')
+            self.ax.set_title('Logistic Regression: ' + iter_info)
 
     def _redraw_plots(self):
         for x, y in self.labeled_coordinates[1][:, :2]:
