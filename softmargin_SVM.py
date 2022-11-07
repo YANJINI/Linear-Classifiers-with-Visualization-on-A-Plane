@@ -28,17 +28,19 @@ class twoD_softmarginSVM:
     def alphas_w_b(self):
         return self.alphas, self.w, self.b
 
-    def with_different_C(self, C):
+    def with_different_C(self):
         self.count_enter = 3
 
-        self.C = C
+        fig, axes = plt.subplots(2, 4, figsize=(18, 10))
 
-        if self.C == 0:
-            raise ValueError('C=0 makes it hard magin SVM which jams cvxopt.qp')
+        self.C = 0.0001
 
-        self._background_figure()
-        self._redraw_plots()
-        self._softmarginSVM()
+        for i in range(2):
+            for j in range(4):
+                self._background_figure(ax_diffC=axes[i, j])
+                self._redraw_plots()
+                self._softmarginSVM()
+                self.C *= 10
 
     def _on_click(self, event):
         if self.which_label == 0:
@@ -108,13 +110,20 @@ class twoD_softmarginSVM:
         x_3 = [-(self.w[0, 0] / self.w[1, 0]) * xx + (1 / self.w[1, 0]) * (1-self.b) for xx in x_1]
         x_4 = [-(self.w[0, 0] / self.w[1, 0]) * xx + (1 / self.w[1, 0]) * (-1-self.b) for xx in x_1]
 
-        plt.plot(x_1, x_2, color='k')
-        plt.plot(x_1, x_3, color='w')
-        plt.plot(x_1, x_4, color='w')
-        plt.fill_between(x_1, -10, x_2, alpha=.25, color='b')
-        plt.fill_between(x_1, x_2, 10, alpha=.25, color='r')
+        if self.count_enter < 3:
+            plt.plot(x_1, x_2, color='k')
+            plt.plot(x_1, x_3, color='w')
+            plt.plot(x_1, x_4, color='w')
+            plt.fill_between(x_1, -10, x_2, alpha=.25, color='b')
+            plt.fill_between(x_1, x_2, 10, alpha=.25, color='r')
+        else:
+            self.ax_diffC.plot(x_1, x_2, color='k')
+            self.ax_diffC.plot(x_1, x_3, color='w')
+            self.ax_diffC.plot(x_1, x_4, color='w')
+            self.ax_diffC.fill_between(x_1, -10, x_2, alpha=.25, color='b')
+            self.ax_diffC.fill_between(x_1, x_2, 10, alpha=.25, color='r')
 
-    def _background_figure(self):
+    def _background_figure(self, ax_diffC=None):
         if self.count_enter == 0:
             self.figure, self.ax = plt.subplots()
             self.ax.set_aspect(1)
@@ -133,20 +142,27 @@ class twoD_softmarginSVM:
             self.ax.set_ylabel('feature 2')
             self.ax.set_title(f'Soft Margin SVM (C={self.C})')
         else:
-            self.figure, self.ax = plt.subplots()
-            self.ax.set_aspect(1)
-            self.ax.set(xlim=[-5, 5], ylim=[-5, 5])
-            self.ax.set_aspect('equal')
-            self.ax.set_xlabel('feature 1')
-            self.ax.set_ylabel('feature 2')
-            self.ax.set_title(f'Soft Margin SVM (C={self.C})')
+            self.ax_diffC = ax_diffC
+            self.ax_diffC.set_aspect(1)
+            self.ax_diffC.set(xlim=[-5, 5], ylim=[-5, 5])
+            self.ax_diffC.set_aspect('equal')
+            self.ax_diffC.set_xlabel('feature 1')
+            self.ax_diffC.set_ylabel('feature 2')
+            self.ax_diffC.set_title(f'C={self.C}')
 
     def _redraw_plots(self):
-        for idx, y_i in enumerate(self.label):
-            if y_i == 1:
-                self.ax.scatter(self.coordinates[idx][0], self.coordinates[idx][1], marker='.', c='r')
-            else:
-                self.ax.scatter(self.coordinates[idx][0], self.coordinates[idx][1], marker='x', c='b')
+        if self.count_enter < 3:
+            for idx, y_i in enumerate(self.label):
+                if y_i == 1:
+                    self.ax.scatter(self.coordinates[idx][0], self.coordinates[idx][1], marker='.', c='r')
+                else:
+                    self.ax.scatter(self.coordinates[idx][0], self.coordinates[idx][1], marker='x', c='b')
+        else:
+            for idx, y_i in enumerate(self.label):
+                if y_i == 1:
+                    self.ax_diffC.scatter(self.coordinates[idx][0], self.coordinates[idx][1], marker='.', c='r')
+                else:
+                    self.ax_diffC.scatter(self.coordinates[idx][0], self.coordinates[idx][1], marker='x', c='b')
 
     def _draw_click(self, event):
         if self.which_label == 0:
