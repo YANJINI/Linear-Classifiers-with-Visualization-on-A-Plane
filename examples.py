@@ -10,4 +10,8 @@ a = twoD_Perceptron(n_iters= 200)
 b = twoD_lGNB()
 c = twoD_logisticR()
 d = twoD_softmarginSVM(C=10)
-d.with_different_C(C=0.0001)
+
+C = 0.001
+while C < 1000:
+    d.with_different_C(C=C)
+    C *= 10

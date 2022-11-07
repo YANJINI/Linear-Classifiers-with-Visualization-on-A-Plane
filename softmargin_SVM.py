@@ -8,7 +8,7 @@ class twoD_softmarginSVM:
     def __init__(self, C):
         self.C = C
 
-        if self.C == 0:
+        if self.C == 0.:
             raise ValueError('C=0 makes it hard magin SVM which jams cvxopt.qp')
 
         self.count_enter = 0
@@ -30,6 +30,7 @@ class twoD_softmarginSVM:
 
     def with_different_C(self, C):
         self.count_enter = 3
+
         self.C = C
 
         if self.C == 0:
